@@ -1,8 +1,8 @@
 # License: BSD-2-Clause
 # (c) 2016-2020 Dridi Boukelmoune <dridi.boukelmoune@gmail.com>
 
-AC_INIT([cashpack], [0.5], [https://github.com/dridi/cashpack/issues])
-AC_COPYRIGHT([Copyright (c) 2016-2020 Dridi Boukelmoune])
+AC_INIT([cashpack], [0.5])
+AC_COPYRIGHT([Copyright (c) 2016-2025 Dridi Boukelmoune])
 
 AC_PREREQ([2.69])
 AC_REVISION([revision 2])

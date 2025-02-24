@@ -4,8 +4,8 @@ Release:        1%{?dist}
 Summary:        The C Anti-State HPACK library
 
 License:        BSD
-URL:            https://github.com/dridi/%{name}
-Source0:        %{url}/releases/download/v%{version}/%{name}-%{version}.tar.gz
+URL:            https://git.sr.ht/~dridi/%{name}
+Source:         %{url}/refs/download/%{name}-%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:  bc
 BuildRequires:  vim-common

@@ -1,9 +1,6 @@
 CASHPACK - The C Anti-State HPACK library
 =========================================
 
-.. image:: logo.png
-   :alt: cashpack logo
-
 cashpack is a stateless event-driven HPACK codec aimed at embedded systems, or
 more specifically memory-constrained systems.
 
@@ -12,24 +9,16 @@ assumptions made by the library would not work in all situations. For example,
 HTTP/2 doesn't allow upper-case characters in header names, neither does
 cashpack.
 
-.. image:: https://scan.coverity.com/projects/7758/badge.svg
-   :alt: Coverity Scan badge
-   :target: https://scan.coverity.com/projects/dridi-cashpack/
-
 It started as a research project and became the basis for Varnish Cache's
-HPACK implementation, it is now a test bed for Varnish_ and `Hitch TLS`_.
-To learn more about its origins, you can watch this talk_ from the first
-edition of VarnishCon.
-
-.. _Varnish: https://www.varnish-cache.org/
-.. _Hitch TLS: https://hitch-tls.org/
-.. _talk: https://www.infoq.com/fr/presentations/varnishcon-dridi-boukelmoune-hpack-vs-varnish-cache
+HPACK implementation, it is now a test bed for Varnish [1] and Hitch TLS [2].
+To learn more about its origins, you can watch this talk [3] from the first
+(and only) edition of VarnishCon.
 
 How to use
 ----------
 
-Grab the `latest release`_ archive, and once inside the source directory
-follow these steps::
+Grab the latest release [4] archive, and once inside the source directory
+follow these steps:
 
     $ ./configure --disable-docs
     $ make
@@ -37,17 +26,15 @@ follow these steps::
     $ sudo make install
 
 Once installed, you will find comprehensive documentation and also examples
-in the manual. You can use the ``cashpack(3)`` manual as an entry point::
+in the manual. You can use the cashpack(3) manual as an entry point:
 
     $ man cashpack
-
-.. _`latest release`: https://github.com/Dridi/cashpack/releases/latest
 
 Hacking
 -------
 
 cashpack relies on autotools for building, and a range of tools for testing
-and code coverage. The basic usage is as follows::
+and code coverage. The basic usage is as follows:
 
    $ path/to/cashpack/bootstrap \
    >        [--with-memcheck]   \
@@ -61,18 +48,18 @@ The first command will reveal the missing bits, and the second the potential
 failures. Code coverage MUST be turned off when the test suite is used for
 checking because it turns off assertions.
 
-The ``bootstrap`` script needs to be run only once. In order to reconfigure
-the build tree, you can use autoconf's ``configure`` script. Command-line
-arguments to the ``bootstrap`` script are passed to ``configure``.
+The 'bootstrap' script needs to be run only once. In order to reconfigure
+the build tree, you can use autoconf's 'configure' script. Command-line
+arguments to the 'bootstrap' script are passed to 'configure'.
 
-For code coverage, the simplest way to get a report is as follows::
+For code coverage, the simplest way to get a report is as follows:
 
    $ path/to/cashpack/bootsrap --with-lcov
    $ make lcov
    $ xdg-open lcov/index.html
 
 Despite a paranoid coding style, insane code coverage and the benefits of
-open-source [1]_ it may not be exempt of security flaws. You can learn more
+open-source [5] it may not be exempt of security flaws. You can learn more
 from the test suite's README file too. The build system portability is limited
 mostly to GNU/Linux systems. Building the project should work fine on other
 systems except for dist archives that may ship with a broken header file.
@@ -171,4 +158,8 @@ Function names are actually made up using proper words, but the rest is a
 collection of 3-letter symbols. 4-letter symbols are tolerated as long as
 enough 2-letter symbols restore the balance.
 
-.. [1] Having many eyes not reviewing the code
+[1] https://www.varnish-cache.org/
+[2] https://hitch-tls.org/
+[3] https://www.infoq.com/fr/presentations/varnishcon-dridi-boukelmoune-hpack-vs-varnish-cache
+[4] https://git.sr.ht/~dridi/cashpack/refs
+[5] Having many eyes not reviewing the code

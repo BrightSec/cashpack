@@ -6,12 +6,11 @@ ACLOCAL_AMFLAGS = -I m4
 DISTCHECK_CONFIGURE_FLAGS = --disable-docs
 
 EXTRA_DIST = \
-	README.rst \
 	$(PACKAGE).spec
 
 dist_doc_DATA = \
 	LICENSE \
-	README.rst
+	README
 
 SUBDIRS = \
 	gen \

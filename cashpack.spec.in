@@ -61,7 +61,7 @@ developing applications that use %{name}.
 
 
 %files
-%doc README.rst LICENSE
+%doc README LICENSE
 %{_libdir}/*.so.*
 %{_libdir}/*.la
 
